@@ -1,0 +1,69 @@
+/*
+ * This file is part of Pathomatic.
+ *
+ * Pathomatic is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Pathomatic is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with Pathomatic.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+package pathomatic.command.defaults;
+
+import pathomatic.api.PathomaticAPI;
+import pathomatic.api.IPathomatic;
+import pathomatic.api.command.Command;
+import pathomatic.api.command.argument.IArgConsumer;
+import pathomatic.api.command.exception.CommandException;
+import pathomatic.api.process.ICustomGoalProcess;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
+
+public class PathCommand extends Command {
+
+    public PathCommand(IPathomatic pathomatic) {
+        super(pathomatic, "path");
+    }
+
+    @Override
+    public void execute(String label, IArgConsumer args) throws CommandException {
+        ICustomGoalProcess customGoalProcess = pathomatic.getCustomGoalProcess();
+        args.requireMax(0);
+        if (customGoalProcess.getGoal() == null) {
+            logDirect("No goal set");
+            return;
+        }
+        PathomaticAPI.getProvider().getWorldScanner().repack(ctx);
+        customGoalProcess.path();
+        logDirect("Now pathing");
+    }
+
+    @Override
+    public Stream<String> tabComplete(String label, IArgConsumer args) throws CommandException {
+        return Stream.empty();
+    }
+
+    @Override
+    public String getShortDesc() {
+        return "Start heading towards the goal";
+    }
+
+    @Override
+    public List<String> getLongDesc() {
+        return Arrays.asList(
+                "The path command tells Pathomatic to head towards the current goal.",
+                "",
+                "Usage:",
+                "> path - Start the pathing."
+        );
+    }
+}

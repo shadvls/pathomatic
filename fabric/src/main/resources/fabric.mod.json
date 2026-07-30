@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "pathomatic",
+  "version": "${version}",
+
+  "name": "Pathomatic",
+  "description": "Pathomatic is an intelligent pathfinding bot for Minecraft. It navigates any terrain, breaks and places blocks, and automates complex tasks with precision.",
+  "authors": [
+    "Yansha de Valois"
+  ],
+  "contact": {
+    "homepage": "https://github.com/shadvls/pathomatic",
+    "sources": "https://github.com/shadvls/pathomatic",
+    "issues": "https://github.com/shadvls/pathomatic/issues" 
+  },
+
+  "license": "LGPL-3.0",
+  "icon": "assets/pathomatic/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+  },
+  "mixins": [
+      "mixins.pathomatic.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.22",
+    "minecraft": ["1.21","1.21.1"]
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.discord": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+modLoader="javafml"
+loaderVersion="[48,)"
+
+license="LGPL-3.0"
+
+[[mods]]
+modId="pathomatic"
+version="${version}"
+displayName="Pathomatic"
+displayURL="https://github.com/shadvls/pathomatic"
+authors="Yansha de Valois"
+description='''
+Pathomatic is an intelligent pathfinding bot for Minecraft.
+It navigates any terrain, breaks and places blocks, and automates complex
+tasks with precision. Whether you're mining, exploring, or building,
+Pathomatic handles the hard work so you can focus on what matters.
+'''
+
+[[dependencies.pathomatic]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.21, 1.21.1]"
+ordering="NONE"
+side="BOTH"

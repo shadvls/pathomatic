@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "quilt_loader": {
+    "group": "pathomatic",
+    "id": "pathomatic",
+    "version": "${version}",
+    "metadata": {
+      "name": "Pathomatic",
+      "description": "Pathomatic is an intelligent pathfinding bot for Minecraft. It navigates any terrain, breaks and places blocks, and automates complex tasks with precision.",
+      "contributors": {
+        "Yansha de Valois": "Owner"
+      },
+      "license": "LGPL-3.0",
+      "icon": "assets/pathomatic/icon.png"
+    },
+    "intermediate_mappings": "net.fabricmc:intermediary",
+    "entrypoints": {
+    },
+    "depends": [
+      {
+        "id": "quilt_loader",
+        "versions": ">=0.25.0"
+      },
+      {
+        "id": "minecraft",
+        "versions": ">=1.21"
+      }
+    ]
+  },
+  "mixin": [
+    "mixins.pathomatic.json"
+  ]
+}

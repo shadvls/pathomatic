@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+MixinConfigs: mixins.pathomatic.json
+MixinConnector: pathomatic.launch.PathomaticMixinConnector
+Implementation-Title: Pathomatic
+Implementation-Version: version
