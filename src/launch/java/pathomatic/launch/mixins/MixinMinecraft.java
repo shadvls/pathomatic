@@ -23,13 +23,13 @@ import pathomatic.api.event.events.PlayerUpdateEvent;
 import pathomatic.api.event.events.TickEvent;
 import pathomatic.api.event.events.WorldEvent;
 import pathomatic.api.event.events.type.EventState;
+import pathomatic.gui.PathomaticKeys;
 import pathomatic.gui.PathomaticScreen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.ReceivingLevelScreen;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.player.LocalPlayer;
-import org.lwjgl.glfw.GLFW;
 import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -56,15 +56,13 @@ public class MixinMinecraft {
     @Unique
     private BiFunction<EventState, TickEvent.Type, TickEvent> tickProvider;
 
-    @Unique
-    private static boolean pathomatic$wasGuiKeyPressed = false;
-
     @Inject(
             method = "<init>",
             at = @At("RETURN")
     )
     private void postInit(CallbackInfo ci) {
         PathomaticAPI.getProvider().getPrimaryPathomatic();
+        PathomaticKeys.OPEN_GUI.getClass();
     }
 
     @Inject(
@@ -113,18 +111,13 @@ public class MixinMinecraft {
 
         this.tickProvider = null;
 
-        if (this.player != null) {
-            long window = Minecraft.getInstance().getWindow().getWindow();
-            boolean isPressed = GLFW.glfwGetKey(window, GLFW.GLFW_KEY_P) == GLFW.GLFW_PRESS;
-            if (isPressed && !pathomatic$wasGuiKeyPressed) {
-                Screen current = Minecraft.getInstance().screen;
-                if (current instanceof PathomaticScreen) {
-                    Minecraft.getInstance().setScreen(null);
-                } else {
-                    Minecraft.getInstance().setScreen(new PathomaticScreen());
-                }
+        if (this.player != null && PathomaticKeys.OPEN_GUI.consumeClick()) {
+            Screen current = Minecraft.getInstance().screen;
+            if (current instanceof PathomaticScreen) {
+                Minecraft.getInstance().setScreen(null);
+            } else {
+                Minecraft.getInstance().setScreen(new PathomaticScreen());
             }
-            pathomatic$wasGuiKeyPressed = isPressed;
         }
     }
 
