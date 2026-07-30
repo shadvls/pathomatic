@@ -9,16 +9,19 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import java.util.List;
+import java.util.Arrays;
 
 @Mixin(Options.class)
 public class MixinOptions {
 
     @Shadow
-    private List<KeyMapping> keyMappings;
+    private KeyMapping[] keyMappings;
 
     @Inject(method = "<init>", at = @At("RETURN"))
     private void registerPathomaticKeys(CallbackInfo ci) {
-        this.keyMappings.add(PathomaticKeys.OPEN_GUI);
+        KeyMapping[] old = this.keyMappings;
+        KeyMapping[] extended = Arrays.copyOf(old, old.length + 1);
+        extended[old.length] = PathomaticKeys.OPEN_GUI;
+        this.keyMappings = extended;
     }
 }
