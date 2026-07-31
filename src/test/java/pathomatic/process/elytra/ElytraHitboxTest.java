@@ -94,7 +94,7 @@ public class ElytraHitboxTest {
         assertTrue("minY should decrease", expanded.minY < hitbox.minY);
         assertTrue("minZ should decrease", expanded.minZ < hitbox.minZ);
 
-        // AABB invariants MUST hold — this is the critical regression test
+        // AABB invariants MUST hold - this is the critical regression test
         assertTrue("minX < maxX (no collapse)", expanded.minX < expanded.maxX);
         assertTrue("minY < maxY (no collapse)", expanded.minY < expanded.maxY);
         assertTrue("minZ < maxZ (no collapse)", expanded.minZ < expanded.maxZ);

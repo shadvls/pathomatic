@@ -8,11 +8,11 @@ Closes #<!-- issue number, or remove -->
 
 ## Type
 
-- [ ] `feat` — new feature
-- [ ] `fix` — bug fix
-- [ ] `chore` — deps, config, tooling
-- [ ] `refactor` — restructure without behaviour change
-- [ ] `perf` — performance improvement
+- [ ] `feat` - new feature
+- [ ] `fix` - bug fix
+- [ ] `chore` - deps, config, tooling
+- [ ] `refactor` - restructure without behaviour change
+- [ ] `perf` - performance improvement
 
 ---
 

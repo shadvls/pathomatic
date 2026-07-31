@@ -23,6 +23,6 @@ assignees: ''
 <!-- Attach if applicable -->
 
 **Is it related to pathfinding?**
-- [ ] Yes — path calculation issue
-- [ ] Yes — movement / execution issue
+- [ ] Yes - path calculation issue
+- [ ] Yes - movement / execution issue
 - [ ] No

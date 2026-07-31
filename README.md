@@ -1,14 +1,14 @@
 # Pathomatic
 
-Pathomatic is an intelligent pathfinding bot for Minecraft. It navigates any terrain, breaks and places blocks, and automates complex tasks with precision — from mining and farming to building and exploration.
+Pathomatic is an intelligent pathfinding bot for Minecraft. It navigates any terrain, breaks and places blocks, and automates complex tasks with precision - from mining and farming to building and exploration.
 
 ## Features
 
-- Pathfinding to any location — `/pathomatic go <x> <y> <z>`
-- Automated mining — `/pathomatic mine <block>`
-- Farming — `/pathomatic farm`
-- Building from schematics — `/pathomatic build`
-- Exploration — `/pathomatic explore`
+- Pathfinding to any location - `/pathomatic go <x> <y> <z>`
+- Automated mining - `/pathomatic mine <block>`
+- Farming - `/pathomatic farm`
+- Building from schematics - `/pathomatic build`
+- Exploration - `/pathomatic explore`
 - And many more commands...
 
 ## Loaders
