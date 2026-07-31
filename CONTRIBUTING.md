@@ -1,37 +1,55 @@
 # Contribution Guide
 
-Thank you for your interest in contributing to Pathomatic!
+Thank you for your interest in contributing to Pathomatic! Your contributions can help make this project better. Here are some guidelines to help you get started.
 
 ## How to Contribute
 
-1. Fork the repository.
-2. Clone your fork:
+1. Fork this repository:
+   - Click the `Fork` button at the top of this repository page.
+2. Clone the forked repository to your local machine.
    ```bash
    git clone https://github.com/<username>/pathomatic.git
    ```
-3. Create a branch:
-   ```bash
-   git checkout -b feat/my-feature
+   - Replace `<username>` with your GitHub username.
+3. Create a new branch
+   - Create a new branch for the feature or fix you want to add.
    ```
-4. Make changes and commit:
-   ```bash
+   cd pathomatic
+   git checkout -b your-branch-name
+   ```
+   - Use a descriptive branch name that reflects the feature or fix you are working on.
+4. Make the necessary changes:
+   - Add or modify your code.
+5. Commit your changes:
+   - Make sure to write a clear and descriptive commit message following the Conventional Commits standard.
+   ```
    git add .
-   git commit -m "feat: description"
+   git commit -m "feat: description of the changes you made"
    ```
-5. Push and create a Pull Request.
+6. Push to your repository:
+   - Push your branch to your GitHub repository.
+   ```
+   git push origin your-branch-name
+   ```
+7. Create a Pull Request (PR):
+   - Go to the original repository page and create a pull request from your branch.
+   - Provide a clear description of what you added or fixed in your pull request.
 
 ## Coding Guidelines
 
-- Follow the existing code style.
+- Follow a consistent coding standard: Ensure your code is consistent with the existing code style in this project.
 - Keep the package structure under `pathomatic.*`.
-- Ensure builds pass across all loaders.
+- Write clear documentation: Add necessary comments and documentation to help others understand your code.
+- Write tests: If possible, add tests for the features or fixes you are adding.
+- Ensure builds pass across all loaders (NeoForge, Forge, Fabric, Quilt).
 
 ## Reporting Issues
 
-Open an issue on the [Issues](https://github.com/shadvls/pathomatic/issues) page.
+If you find any bugs or have suggestions for improvements, please create a new issue on the [Issues](https://github.com/shadvls/pathomatic/issues) page.
 
-## Contact
+## Communication
 
-For discussions, reach out via [Discussions](https://github.com/shadvls/pathomatic/discussions).
+If you want to discuss something related to your contribution or the project in general, feel free to reach out to us via [Discussions](https://github.com/shadvls/pathomatic/discussions).
 
-Thank you for contributing!
+<br>
+Thank you for your contribution!

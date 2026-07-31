@@ -40,6 +40,18 @@ cd pathomatic
 
 The built JARs will be in `build/libs/` and `build/dist/`.
 
+## Contributing
+
+Contributions are welcome! Please read our [Contribution Guide](CONTRIBUTING.md) to get started.
+
+## Security
+
+If you discover a security vulnerability, please report it to [security@yansha.dev](mailto:security@yansha.dev). See our [Security Policy](SECURITY.md) for details.
+
+## Community
+
+- [GitHub Discussions](https://github.com/shadvls/pathomatic/discussions)
+
 ## License
 
 LGPL-3.0
